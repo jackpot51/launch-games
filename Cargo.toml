@@ -1,0 +1,15 @@
+[package]
+name = "launch-games"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bytemuck = "1.13"
+hidapi = { version = "1.4", default-features = false, features = ["linux-shared-hidraw"] }
+rand = "0.8"
+softbuffer = "0.2"
+system76_ectool = "0.3"
+tiny-skia = "0.8"
+winit = "0.28"

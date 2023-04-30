@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+set -ex
+
+cargo build --release --bin launch-space
+sudo target/release/launch-space
