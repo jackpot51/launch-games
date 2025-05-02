@@ -68,8 +68,9 @@ fn ec_version(ec: &mut Ec<Box<dyn Access>>) -> Result<String, Error> {
 fn main() {
     let mut args = env::args().skip(1);
     let h = args.next().unwrap().parse::<u8>().unwrap();
-    let s = args.next().unwrap().parse::<u8>().unwrap();
-    //TODO: use value?
+    // Keyboards LEDs are not great at low saturation and value, so just use the hue
+    //let s = args.next().unwrap().parse::<u8>().unwrap();
+    let s = 0xFF;
     //let v = args.next().unwrap().parse::<u8>().unwrap();
     let v = 0xFF;
     println!("{h} {s} {v}");
