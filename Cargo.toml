@@ -13,3 +13,9 @@ softbuffer = "0.2"
 system76_ectool = "0.3"
 tiny-skia = "0.8"
 winit = "0.28"
+
+[dependencies.cosmic-config]
+git = "https://github.com/pop-os/libcosmic.git"
+
+[dependencies.cosmic-theme]
+git = "https://github.com/pop-os/libcosmic.git"

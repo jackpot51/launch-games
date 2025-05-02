@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+set -ex
+
+cargo build --release --bin cosmic-accent --bin launch-color
+sudo target/release/launch-color $(target/release/cosmic-accent)

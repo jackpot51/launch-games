@@ -85,7 +85,11 @@ fn main() {
                 // System76 launch_2
                 (0x3384, 0x0006, 1) |
                 // System76 launch_heavy_1
-                (0x3384, 0x0007, 1) => {
+                (0x3384, 0x0007, 1) |
+                // System76 launch_3
+                (0x3384, 0x0009, 1) |
+                // System76 launch_heavy_3
+                (0x3384, 0x000A, 1) => {
                     let device = info.open_device(&api)?;
                     let access = AccessHid::new(device, 10, 100)?;
                     return Ok(unsafe { Ec::new(access)?.into_dyn() });
