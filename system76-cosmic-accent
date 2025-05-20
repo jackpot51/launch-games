@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+set -ex
+
+cargo build --release --bin cosmic-accent
+target/release/cosmic-accent | cut -d ' ' -f4 | sudo tee '/sys/class/leds/system76_acpi::kbd_backlight/color'
