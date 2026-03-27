@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -ex
+set -e
 
 cargo build --release --bin cosmic-accent
 last_accent=""
