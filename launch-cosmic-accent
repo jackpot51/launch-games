@@ -1,6 +1,15 @@
 #!/usr/bin/env bash
 
-set -ex
+set -e
 
 cargo build --release --bin cosmic-accent --bin launch-color
-sudo target/release/launch-color $(target/release/cosmic-accent)
+last_accent=""
+while sleep 1
+do
+    accent="$(target/release/cosmic-accent)"
+    if [ "${accent}" != "${last_accent}" ]
+    then
+        sudo target/release/launch-color ${accent}
+    fi
+    last_accent="${accent}"
+done

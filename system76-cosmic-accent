@@ -3,4 +3,13 @@
 set -ex
 
 cargo build --release --bin cosmic-accent
-target/release/cosmic-accent | cut -d ' ' -f4 | sudo tee '/sys/class/leds/system76_acpi::kbd_backlight/color'
+last_accent=""
+while sleep 1
+do
+    accent="$(target/release/cosmic-accent)"
+    if [ "${accent}" != "${last_accent}" ]
+    then
+        echo "${accent}" | cut -d ' ' -f4 | sudo tee '/sys/class/leds/system76_acpi::kbd_backlight/color'
+    fi
+    last_accent="${accent}"
+done
